@@ -1,0 +1,43 @@
+// @ts-check
+
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
+
+export default tseslint.config(
+  {
+    files: ['src/**/*.{js,jsx,mjs,cjs,ts,tsx}'],
+    extends: [
+      eslint.configs.recommended,
+      ...tseslint.configs.recommendedTypeChecked,
+    ],
+    plugins: {
+      react,
+      'react-hooks': reactHooks
+    },
+    languageOptions: {
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
+        project: './tsconfig.json',
+        tsconfigRootDir: import.meta.dirname,
+      },
+      globals: {
+        ...globals.browser,
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-unused-expressions': 0,
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unsafe-argument': 'warn',
+      '@typescript-eslint/no-unsafe-assignment': 'warn',
+      '@typescript-eslint/no-unsafe-call': 'warn',
+      '@typescript-eslint/no-unsafe-member-access': 'warn',
+    },
+  }
+);

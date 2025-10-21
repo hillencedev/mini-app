@@ -1,0 +1,30 @@
+body {
+  background: var(--tg-theme-bg-color, #ffffff);
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--tg-theme-text-color, #000000);
+  line-height: 1.4;
+}
+
+/* Hide scrollbars for webkit browsers */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for Firefox */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Telegram Mini App CSS Variables - автоматически устанавливаются SDK */
+:root {
+  --tg-font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --tg-border-radius: 12px;
+  --tg-spacing-xs: 4px;
+  --tg-spacing-s: 8px;
+  --tg-spacing-m: 12px;
+  --tg-spacing-l: 16px;
+  --tg-spacing-xl: 24px;
+}
